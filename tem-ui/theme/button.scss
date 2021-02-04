@@ -1,0 +1,29 @@
+.t-button {
+  border: 1px solid transparent;
+  font-size: 12px;
+  color: var(--black);
+  cursor: pointer;
+
+  &.t-button-default {
+    background: var(--default);
+  }
+  &.t-button-success {
+    background: var(--success);
+    color: var(--white);
+  }
+  &.t-button-primary {
+    background: var(--primary);
+    color: var(--white);
+  }
+  &.t-button-warning {
+    background: var(--warning);
+    color: var(--white);
+  }
+  &.t-button-text {
+    background: transparent;
+  }
+
+  &.t-button-medium {
+    padding: 7px 15px;
+  }
+}

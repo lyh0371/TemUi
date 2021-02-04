@@ -1,0 +1,130 @@
+@import 'tooltip';
+@import 'button';
+
+:root,
+[data-color-mode='light'] {
+  --default: #e3eaef; //#e3eaef
+  --success: #0acf97; //#0acf97
+  --primary: #2d7bf4; //#2d7bf4;
+  --danger: #f1556c; //#f1556c
+  --info: #4eb7eb; // #4eb7eb
+  --warning: #f9bc0b; //#f9bc0b;
+  --white: #fff;
+  --black: #000;
+
+  --mix-color: 68, 68, 68;
+  --main-background-color: #ffffff;
+  --sub-background-color: #fafafa;
+  --hover-background-color: rgb(var(--black), 0.1);
+  --sub-text-color: #98a6ad;
+  --main-text-color: rgb(var(--black));
+  --line-color: rgb(var(--default));
+  --shadow: rgb(var(--black), 0.1);
+  --disabled: #f7f7fa;
+  --coreBg: #fafafa;
+}
+
+[data-color-mode='dark'] {
+  --default: 227, 234, 239; //#e3eaef
+  --success: 10, 207, 151; //#0acf97
+  --primary: 45, 123, 244; //#2d7bf4;
+  --danger: 241, 85, 108; //#f1556c
+  --info: 78, 183, 235; // #4eb7eb
+  --warning: 249, 188, 11; //#f9bc0b;
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+
+  --mix-color: 255, 255, 255;
+  --main-background-color: #1a1d24;
+  --sub-background-color: #131415;
+  --hover-background-color: rgb(var(--white), 0.1);
+  --sub-text-color: #98a6ad;
+  --main-text-color: rgb(var(--white));
+  --line-color: rgb(var(--default), 0.3);
+  --shadow: rgb(var(--black), 0.4);
+  --disabled: #2a2b2b;
+}
+
+.info {
+  color: rgb(var(--info));
+}
+
+.error {
+  color: rgb(var(--danger));
+}
+
+.success {
+  color: rgb(var(--success));
+}
+
+.warning {
+  color: rgb(var(--warning));
+}
+
+i.x-arrow {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 7px;
+    background-color: var(--line-color);
+    left: 4px;
+    top: 7px;
+    transform-origin: top center;
+    transition: all 0.2s ease;
+  }
+
+  &::after {
+    transform: rotate(135deg);
+  }
+  &::before {
+    transform: rotate(-135deg);
+  }
+
+  &.is-active {
+    &::after {
+      top: 2px;
+      transform: rotate(45deg);
+    }
+    &::before {
+      top: 2px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.x-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.x-trigger {
+  z-index: 2;
+  position: absolute;
+  background-color: var(--main-background-color);
+  border-radius: 4px;
+  box-shadow: 0 0 8px var(--shadow);
+  overflow: hidden;
+  min-width: 100%;
+  margin-top: 3px;
+}
+
+.demo-source {
+  .t-button {
+    margin-right: 10px;
+  }
+}
